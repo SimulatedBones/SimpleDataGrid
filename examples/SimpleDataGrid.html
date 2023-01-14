@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <datagrid></datagrid>
+
+    <script type="module">
+        import DataGrid from '../js/DataGrid/DataGrid.js';
+
+        const data = [
+            {
+                id: '1',
+                locationName: 'National Forest',
+                lat: '38.9',
+                lon: '104.8',
+                url: 'https://www.forest.gov',
+                contactName: 'John Doe',
+                contactEmail: 'jdoe@forest.gov'
+            },
+            {
+                id: '2',
+                locationName: 'Animal Preserve',
+                lat: '38.9',
+                lon: '105.8',
+                url: 'https://saveanimals.org',
+                contactName: 'Sally Jenkins',
+                contactEmail: 'sjenkins@saveanimals.org'
+            },
+            {
+                id: '3',
+                locationName: 'Botanic Gardens',
+                lat: '37.1',
+                lon: '104.8',
+                url: 'https://gardens.com',
+                contactName: 'Bill Edenton',
+                contactEmail: 'bed@gardens.com'
+            },
+            {
+                id: '4',
+                locationName: 'Geology Research Center',
+                lat: '36.9',
+                lon: '102.5',
+                url: 'https://grc.org',
+                contactName: 'Peggy Easton',
+                contactEmail: 'peggy.easton@grc.org'
+            },
+            {
+                id: '5',
+                locationName: 'Hunting Range',
+                lat: '39.8',
+                lon: '102.8',
+                url: 'https://biggame.com',
+                contactName: 'Ben Dover',
+                contactEmail: 'bendover@biggame..com'
+            }
+        ];
+
+        let fieldsDefinition = [
+            {
+                name: 'id',
+                alias: 'ID',
+                type: 'identifier'
+
+            },
+            {
+                name: 'locationName',
+                alias: 'Location',
+                type: 'text'
+            },
+            {
+                name: 'lat',
+                alias: 'Latitude',
+                type: 'number'
+            },
+            {
+                name: 'lon',
+                alias: 'Longitude',
+                type: 'number'
+            },
+            {
+                name: 'url',
+                alias: 'URL',
+                type: 'link'
+            },
+            {
+                name: 'contactName',
+                alias: 'Contact',
+                type: 'text',
+            },
+            {
+                name: 'contactEmail',
+                alias: 'Contact Email',
+                type: 'email-link'
+            }
+        ];
+
+        let dg = new DataGrid({
+            container: 'data-grid-container',
+            fields: fieldsDefinition
+        });
+        dg.load(data);
+    </script>
+    <div id="data-grid-container"></div>
+</body>
+</html>
